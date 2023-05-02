@@ -1,5 +1,7 @@
 .vscode
 
-# binaries and working directory for quick builds using VS Code configs
+# setup for quick builds using VS Code configs
 bin
 wd
+playground.c
+
