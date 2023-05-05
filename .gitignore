@@ -3,5 +3,6 @@
 # setup for quick builds using VS Code configs
 bin
 wd
+temp
 playground.c
-
+timetracking.txt
