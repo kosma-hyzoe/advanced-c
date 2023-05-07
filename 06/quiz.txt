@@ -1,0 +1,14 @@
+1: a
+2: c (it's more of a compilation warning though)
+3: b
+4: c
+5: false
+6: b
+7: d
+8: c
+9: b
+10: b
+11: d (a mistake in the question!)
+12: c
+13: false 
+14: true
