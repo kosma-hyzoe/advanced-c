@@ -26,6 +26,4 @@ int main()
     }
 
 	free(maptr);
-
-    return 0;
 }
