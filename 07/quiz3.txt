@@ -1,0 +1,9 @@
+1: c
+2: a
+3: c
+4: True
+5: Yes
+6: Yes
+7: False
+8: False
+9: True
