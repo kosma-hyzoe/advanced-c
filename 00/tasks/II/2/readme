@@ -1,0 +1,13 @@
+
+Zaimplementowac interfejs do zarzadzania obiektami ``struct Image``.
+Do przygotowania sa trzy metody publiczne interfejsu:
+
+  -ImageAllocate - Poprawnie przygotowuje pamiec dla calej sturktury i jej pol.
+                   Pola IHDR, sRGB maja byc wyzerowane
+                   Na wyjsciu zwraca nowo utworzony obiekt
+                   Metoda ma poprawnie obslugiwac bledy - uzyc errno i strerror
+
+  -ImageFree     - Zwalnia podany obiekt. Poprawnie obsluguje szczegolne przypadki
+
+  -ImageCopy     - Wykonuje kopie obiektu. Na wyjsciu zwraca nowo utworzony obiekt
+

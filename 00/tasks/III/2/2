@@ -1,0 +1,17 @@
+
+char *buf = "abcdefghijk";
+void *ptr = buf;         // addr = 0x00010
+char c;
+char words[1024];
+
+uint32_t *w_ptr = (uint32_t*) ptr;
+w_ptr += 1;              // addr = ?
+
+c = *(char*)w_ptr;
+printf("%c\n", c);       // mesg: ?
+
+uint16_t *hw_ptr = (uin16_t*) w_ptr;
+hw_ptr += 1;             // addr = ?
+
+strcpy(words, (char*)hw_ptr);
+printf("%s\n", words);   // mesg: ?
