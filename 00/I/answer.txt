@@ -1,7 +1,7 @@
 Linijka 38 Zeruje bajty 8-16 structa `data`, co przekłada się na przypisanie 
 wartości 0 do `data.size` które ma rozmiar 8 bajtów.
 Linijka 39 - ustawiamy size na 148. To liczba poza rozmiarem chara (127),
-więc co powinna się upcastować na signed chara, mój kompilator wydaje się
+więc powinna się upcastować na signed chara, mój kompilator wydaje się
 zinterpretować 148 jako -108. Linijka 40... Tu robi się dziwnie :p data.size
 zmienia się na 404, ale nie potrafię do końca powiedzieć dlaczego. Drukowanie na
 linijce 45 wydaje się printować właśnie `data.size` gdy `data.buf`
