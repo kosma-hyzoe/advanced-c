@@ -5,7 +5,7 @@
 #define BUFF_SIZE               (int)(1<<29)
 
 typedef struct __attribute__((__packed__)) {
-    char padding[3];
+    char paddrng[3];
     short id;
     float factor;
     char depth;

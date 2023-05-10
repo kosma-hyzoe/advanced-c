@@ -1,0 +1,4 @@
+In `1_packed.c`, the compiler is prevented from aligning the struct members to
+their address boundaries, thus `Flow2 ` may be slightly slower to access but
+takes less bytes of memory (10 vs 16 bytes on my arch).
+
