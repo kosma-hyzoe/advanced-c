@@ -1,8 +1,9 @@
 #pragma once
-
+#include <stddef.h>
 #define BUFF_SIZE (int)(1 << 10)
 
-int data[BUFF_SIZE];
+/* this line seems to cause problems with my flags so I commented it out */
+// int data[BUFF_SIZE];
 
 struct BufId {
     unsigned int id;

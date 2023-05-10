@@ -1,7 +1,5 @@
 #include <stdio.h>
 
-#define MASK
-
 int main()
 {
     int n;
