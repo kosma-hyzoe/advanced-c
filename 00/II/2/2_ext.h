@@ -1,8 +1,7 @@
 #pragma once
 
 #include <stdint.h>
-
-
+#include <stddef.h>
 /* data types definition */
 typedef struct {
     uint32_t height;
@@ -32,17 +31,12 @@ struct Image {
     uint64_t id;
 };
 
-
-
 /* private methods */
 /* private methods - end here */
 
 /* public methods */
-struct Image*
-ImageAllocate(void);
+struct Image *ImageAllocate(void);
 
-void
-ImageFree(struct Image *);
+void ImageFree(struct Image *);
 
-struct Image *
-ImageCopy(struct Image *);
+struct Image *ImageCopy(struct Image *);
