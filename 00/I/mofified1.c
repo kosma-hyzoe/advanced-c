@@ -11,8 +11,15 @@ struct Data {
 };
 struct Data data;
 
-inline void
+void
 DataSetup()
+{
+    
+}
+
+
+int
+main()
 {
     const size_t size = 1024;
     void *ptr = data.buf;
@@ -22,25 +29,19 @@ DataSetup()
     memset(ptr,123,size);                       /* <-  przypisanie wartosci do arraya */
     data.id = 3;
     data.name = "First Instance";
-}
-
-
-int
-main()
-{
     void *buf;
 
-    {
-        char *ptr = malloc(123);
-        ptr = (char*)(struct Data*)&data;
-        ptr += 8;
+    
+        char *ptr2 = malloc(123);
+        ptr2 = (char*)(struct Data*)&data;
+        ptr2 += 8;
 
-        memset( (char*)ptr, 0, sizeof(long long));  /* co spowoduje ta operacja */
-        *ptr = 148;
-        ptr[1] = 1;
+        memset( (char*)ptr2, 0, sizeof(long long));  /* co spowoduje ta operacja */
+        *ptr2 = 148;
+        ptr2[1] = 1;
 
         // buf = data.buf;
-    }
+    
 
     // printf("%c\n", *(char*)buf); /* co zostanie wyprintowane na ekran? */
 
