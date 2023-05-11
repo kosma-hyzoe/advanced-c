@@ -1,10 +1,8 @@
 Linijka 38 Zeruje bajty 8-16 structa `data`, co przekłada się na przypisanie 
 wartości 0 do `data.size` które ma rozmiar 8 bajtów.
-Linijka 39 - ustawiamy size na 148. To liczba poza rozmiarem chara (127),
-więc powinna się upcastować na signed chara, mój kompilator wydaje się
-zinterpretować 148 jako -108. Linijka 40... Tu robi się dziwnie :p data.size
-zmienia się na 404, ale nie potrafię do końca powiedzieć dlaczego. Drukowanie na
+Linijka 39 - ustawiamy size na 148. Linijka 40... Tu robi się dziwnie :p
+`data.size` zmienia się na 404 (0b1_1010100), podejrzewam że to kwestia odczytu
+"little-endian" liczb 148 (0b1010100) i 1, ale pewności nie mam. Drukowanie na
 linijce 45 wydaje się printować właśnie `data.size` gdy `data.buf`
-wskazuje nulla, ale to raczej zachowanie undefined. Binarna reprezentacja 148
-daje 404 po dodaniu 1 na początku, ale nie wiem, czy to dobry trop.
+wskazuje nulla, ale to raczej zachowanie undefined.
 
