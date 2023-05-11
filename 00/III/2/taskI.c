@@ -2,6 +2,17 @@
 #include <stdint.h>
 #include <stdio.h>
 
+/*
+[I]
+ *zaimplementowac funkcje do odwrocenia kolejnosci bajtow danego fragmentu
+ pamieci uzyc funkcje na:
+    - array zmiennych
+    - unsigned int
+    - unsigned long long
+    - zlozone struktura danych
+    - c string (jakis wyraz / wyraz skladajy sie z liczb z przedzialu 0..255)
+*/
+
 void rev_bytes(unsigned char *b, size_t c)
 {
     size_t i;
