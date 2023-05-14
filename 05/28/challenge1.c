@@ -12,7 +12,7 @@ static char *helloWorld()
 int main()
 {
         /* int variable with block scope and temp. storage */
-        int foo; 
+        int foo;
         /* a float var with permanent storage */
         static int foobar;
         /* a register int variable */

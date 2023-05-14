@@ -1,8 +1,8 @@
 #include <stdio.h>
 
 union student {
-    char letter_grade; 
-    int rounded_grade; 
+    char letter_grade;
+    int rounded_grade;
     float exact_grade;
 };
 
