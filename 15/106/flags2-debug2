@@ -1,1 +1,1 @@
--g -Wall -Werror -o death.o -DDEBUGON=1
+-g -DDEBUG=2

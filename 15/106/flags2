@@ -1,1 +1,1 @@
--g -Wall -Werror -o death.o
+-g -Wall -Werror
