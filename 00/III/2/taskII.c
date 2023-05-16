@@ -15,9 +15,10 @@ odpowiednikami w C
 
 char *fkstrcpy(char *dest, const char *src)
 {
-    for (int i = 0; *(src + i) != '\0'; i++)
+     int i;
+    for (i = 0; *(src + i) != '\0'; i++)
         *(dest + i) = *(src + i);
-    *dest = '\0';
+    *(dest + i) = '\0';
 
     return dest;
 }
@@ -48,19 +49,22 @@ int fkstrcmp(const char *s1, const char *s2)
 
 char *fkstrstr(const char *haystack, const char *needle)
 {
+   if (*needle == '\0')
+            return (char *) haystack;
+
     for (int i = 0; *(haystack + i) != '\0'; i++) {
         if (*(haystack + i) == *needle) {
             int j = 0;
-            while (*(needle + j) == *(haystack + j) && *(needle + j) != '\0')
+            while (*(needle + j) != '\0' && *(needle + j) == *(haystack + i + j))
                 j++;
-            if (*needle == '\0')
-                return haystack + i;
+            if (*(needle +j) == '\0')
+                return (char *)(haystack + i);
         }
     }
     return NULL;
 }
 
-int main() 
+int main()
 {
-    return 0; 
+    return 0;
 }
