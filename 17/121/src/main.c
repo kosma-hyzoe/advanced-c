@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "strfun.h"
+#include "../incl/strfun.h"
 
 int main()
 {
