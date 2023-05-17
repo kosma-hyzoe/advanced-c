@@ -1,10 +1,8 @@
 #include <stddef.h>
-#include <stdio.h>
 #include "../incl/strfun.h"
 
 int cfreq(char *s, char c)
 {
-    printf("Now I am become Death, the destroyer of worlds\n");
     int freq = 0;
     for (int i = 0; s[i] != '\0'; i++) {
         if (s[i] == c)
