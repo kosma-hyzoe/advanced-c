@@ -2,7 +2,7 @@
 
 extern int loop_counter;
 
-void display()
+void nddisplay()
 {
-       printf("%d\n", ++loop_counter); 
+       printf("%d\n", ++loop_counter);
 }

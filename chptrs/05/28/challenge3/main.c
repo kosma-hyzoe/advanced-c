@@ -1,13 +1,13 @@
 #include <stdio.h>
 
-void display();
+void nddisplay();
 
 int loop_counter = 0;
 
 int main()
 {
 	for (; loop_counter < 5;)
-                display();
+                nddisplay();
 
 	return 0;
 }
