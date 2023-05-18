@@ -9,9 +9,15 @@ void fillarray(double ar[], int n)
 }
 
 void showarray(double ar[], int n)
+{
+
+}
 
 /* sorts array of doubles from lowest to highest */
 main()
 {
+    double ar[ARRAY_SIZE];
 
+    fillarray(ar, ARRAY_SIZE);
+    showarray
 }
