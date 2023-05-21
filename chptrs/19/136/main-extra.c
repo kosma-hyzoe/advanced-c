@@ -112,11 +112,21 @@ int ndupdate(node_t **nd, int pos, int val)
 
 int main()
 {
-    node_t *ndptr = ndcreate(0);
-    printf("Initialised a linked list with starting value 0.\n");
+    node_t *ndptr = NULL;
+    int val;
+    printf("Enter the value(s) for a new linked list:\n");
+        while (scanf("%d", &val) != EOF) {
+            if (ndptr == NULL)
+                ndptr = ndcreate(val);
+            else
+                ndinsend(&ndptr, val);
+        }
+    rewind(stdin);
+
+    ndprint(ndptr);
 
     int choice = '\0';
-    int pos, val;
+    int pos;
     while (1) {
         printf("\n1. insert a node at the beginning\n"
                "2. insert a node at end\n"
@@ -125,7 +135,7 @@ int main()
                "5. update node value\n"
                "6. search element\n"
                "7. display the linked list\n");
-        printf("\n\nYour choice: ");
+        printf("\nYour choice: ");
 
         if (scanf(" %d", &choice) == EOF)
             break;

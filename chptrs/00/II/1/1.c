@@ -25,7 +25,7 @@ int main()
         } desc_t;
 
         desc_t *desc = (desc_t *)EXT_GET_PTR();
-        
+
         /* copy data from ``desc`` to ``short_desc`` and ``index`` */
         short_desc.ptr = desc->ptr;
         short_desc.size = desc->size;

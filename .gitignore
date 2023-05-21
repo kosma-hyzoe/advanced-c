@@ -1,5 +1,3 @@
-.vscode
-
 # setup for quick builds using VS Code configs
 bin
 wd
@@ -8,3 +6,6 @@ playground.c
 
 # link to my notes
 c.md
+
+.vscode
+.idea
