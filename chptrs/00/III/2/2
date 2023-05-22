@@ -1,0 +1,16 @@
+char *buf = "abcdefghijk";
+void *ptr = buf;         // addr = 0x00010
+char c;
+char words[1024];
+
+uint32_t *w_ptr = (uint32_t*) ptr;
+w_ptr += 1;              // addr = 0x00014
+
+c = *(char*)w_ptr;
+printf("%c\n", c);       // mesg: e (w_ptr++ moves the pointer by 4 bytes)
+
+uint16_t *hw_ptr = (uint16_t*) w_ptr;
+hw_ptr += 1;             // addr = 0x00016
+
+strcpy(words, (char*)hw_ptr);
+printf("%s\n", words);   // mesg: ghijk

@@ -15,10 +15,16 @@ bool compare_strings(unsigned char *a, unsigned char *b, const size_t size)
     }
     return true;
 }
-
+/*
+ * you could also try this:
+ *
+ * uint64_t *p1 = (uint64_t *)str1;
+ * uint64_t *p2 = (uint64_t *)str2;
+ * bool equal = *p1 == *p2 ? true : false;
+ */
 bool cmp_strings_no_loops(unsigned char *a, unsigned char *b, const size_t size)
 {
-    if (memcmp(signature, valptr, size) == 0)
+    if (memcmp(a, b, size) == 0)
         return true;
     else
         return false;

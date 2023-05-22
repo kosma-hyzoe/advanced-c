@@ -54,7 +54,7 @@ int main(void)
         } IHDR_t;
 
         IHDR_t foo = {255, 300, 0, 3, 4, 4, 4};
-        rev_bytes((char *)&foo, sizeof(IHDR_t));    
+        rev_bytes((char *)&foo, sizeof(IHDR_t));
     }
     {
         int i;
@@ -65,11 +65,10 @@ int main(void)
 
         for (i = 0; i < 16; i++)
             printf("0x%02X ", buf[i]);
-        printf("\n"); 
+        printf("\n");
     }
     {
-        /* seg fault... not sure why */
-        unsigned char * foo = "foobar";
+        char foo[] = "foobar";
         rev_bytes(foo, 6);
         printf("%s\n", foo);
     }
