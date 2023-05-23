@@ -1,1 +1,0 @@
-/home/m.hyzorek/notes/c.md
