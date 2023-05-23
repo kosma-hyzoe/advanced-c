@@ -1,1 +1,1 @@
-/home/kosma/notes/c.md
+/home/m.hyzorek/notes/c.md

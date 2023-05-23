@@ -1,7 +1,7 @@
-# setup for quick builds using VS Code configs
+# executables
 bin
-wd
-temp
+
+# f-around find out
 playground.c
 
 # link to my notes
