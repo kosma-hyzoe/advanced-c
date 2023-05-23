@@ -9,7 +9,7 @@
 
 int main(int argc, char const *argv[])
 {
-    int status, valread, cli_fd;
+    int status, cli_fd;
 
     struct sockaddr_in serv_addr;
     serv_addr.sin_family = AF_INET;
@@ -19,7 +19,7 @@ int main(int argc, char const *argv[])
         return -1;
     }
 
-    int32_t *msg;
+    uint32_t msg;
     printf("Enter the int you'd like to send to server: ");
     scanf("%d", &msg);
 
@@ -30,15 +30,18 @@ int main(int argc, char const *argv[])
     }
 
     int s = connect(cli_fd, (struct sockaddr *)&serv_addr, sizeof(serv_addr));
-    if ((s < 0) {
+    if (s < 0) {
         printf("\nConnection Failed \n");
         return -1;
     }
 
-    uint32_t *response;
-    write(cli_fd, msg, strlen(msg), 0);
-    valread = read(cli_fd, &response, sizeof(uint32_t));
-    printf("Server response: %d\n", response);
+    int valread;
+    uint32_t response;
+    write(cli_fd, &msg, sizeof(uint32_t));
+    // if (!(valread = read(cli_fd, &response, sizeof(uint32_t))) {
+    
+    // }
+    // printf("Server response: %d\tValdread: %d\n", response, valread);
 
     close(cli_fd);
     return 0;
