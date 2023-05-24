@@ -30,7 +30,7 @@ int main(int argc, char const *argv[])
         perror("socket");
         return -1;
     }
-    
+
     cstatus = connect(cli_fd, (struct sockaddr *)&serv_addr, sizeof(serv_addr));
     if (cstatus < 0) {
         perror("connect");
