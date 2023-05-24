@@ -52,9 +52,9 @@ int main(int argc, char const *argv[])
 
     int valread = read(cli1sckt, &codemsg, sizeof(uint32_t));
     if (valread <= 0) {
-            perror("read");
-            close(cli1sckt);
-            return -1;
+        perror("read");
+        close(cli1sckt);
+        return -1;
     } else {
         printf("SERVER: Code message received from client1: %d\n", codemsg);
     }
@@ -76,7 +76,7 @@ int main(int argc, char const *argv[])
         close(cli2sckt);
         return -1;
     }
-    close(cli1sckt);
+    close(cli2sckt);
 
     shutdown(server_fd, SHUT_RDWR);
 }

@@ -36,10 +36,10 @@ int main(int argc, char const *argv[])
     if (valread <= 0) {
         perror("read");
         close(cli_fd);
-    } else {
-        printf("CLI12: Code message received from server: '%d'\n", codemsg);
+        return -1;
     }
 
+    printf("CLI12: Code message received from server: '%d'\n", codemsg);
     close(cli_fd);
     return 0;
 }
