@@ -1,8 +1,12 @@
-Linijka 38 Zeruje bajty 8-16 structa `data`, co przekłada się na przypisanie 
+Linijka 38 Zeruje bajty 8-16 structa `data`, co przekłada się na przypisanie
 wartości 0 do `data.size` które ma rozmiar 8 bajtów.
-Linijka 39 - ustawiamy size na 148. Linijka 40... Tu robi się dziwnie :p
-`data.size` zmienia się na 404 (0b1_1010100), podejrzewam że to kwestia odczytu
-"little-endian" liczb 148 (0b1010100) i 1, ale pewności nie mam. Drukowanie na
-linijce 45 wydaje się printować właśnie `data.size` gdy `data.buf`
-wskazuje nulla, ale to raczej zachowanie undefined.
+Linijka 39 - ustawiamy size na 148. Linijka 40 - `data.size` zmienia się na 404
+(0b1_1010100), to  zdaje się kwestia odczytu "little-endian"
+liczb 148 (0b1010100) i 1.
+
+W tej wersji kodu wyprintuje się seg fault - buf wciąż wskazuje nulla.
+
+Myślałem chwilę że to jakaś swoistość structów i czy pusty pointer buf nie
+przeskoczy na size'a, ale raczej nie. Chyba, że to jakieś undefined czary na
+garbage values :p.
 
