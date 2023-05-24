@@ -9,21 +9,17 @@
 
 int main(int argc, char const *argv[])
 {
+    int status, cli_fd;
+
     struct sockaddr_in serv_addr;
     serv_addr.sin_family = AF_INET;
     serv_addr.sin_port = htons(PORT);
     if (inet_pton(AF_INET, IPV4_ADDR, &serv_addr.sin_addr) <= 0) {
-        printf("\nInvalid address. Exiting... \n");
+        perror("inet_pton");
         return -1;
     }
 
-    uint32_t msg;
-    printf("Enter the int you'd like to send to server: ");
-    scanf("%d", &msg);
-
-
-    int cli_fd = socket(AF_INET, SOCK_STREAM, 0);
-    if (cli_fd <= 0 ) {
+    if ((cli_fd = socket(AF_INET, SOCK_STREAM, 0)) < 0) {
         perror("socket");
         return -1;
     }
@@ -35,11 +31,13 @@ int main(int argc, char const *argv[])
         return -1;
     }
 
-    int valread = write(cli_fd, &msg, sizeof(uint32_t));
+    uint32_t codemsg;
+    int valread = read(cli_fd, &codemsg, sizeof(uint32_t));
     if (valread <= 0) {
-        perror("write");
+        perror("read");
         close(cli_fd);
-        return -1;
+    } else {
+        printf("Code message from server: %d\n", codemsg);
     }
 
     close(cli_fd);
