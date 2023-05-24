@@ -9,9 +9,9 @@
 
 int main(int argc, char const *argv[])
 {
-    int status, cli_fd;
-
+    int cstatus, cli_fd;
     struct sockaddr_in serv_addr;
+
     serv_addr.sin_family = AF_INET;
     serv_addr.sin_port = htons(PORT);
     if (inet_pton(AF_INET, IPV4_ADDR, &serv_addr.sin_addr) <= 0) {
@@ -24,8 +24,8 @@ int main(int argc, char const *argv[])
         return -1;
     }
 
-    int s = connect(cli_fd, (struct sockaddr *)&serv_addr, sizeof(serv_addr));
-    if (s < 0) {
+    cstatus = connect(cli_fd, (struct sockaddr *)&serv_addr, sizeof(serv_addr));
+    if (cstatus < 0) {
         perror("connect");
         close(cli_fd);
         return -1;
@@ -37,7 +37,7 @@ int main(int argc, char const *argv[])
         perror("read");
         close(cli_fd);
     } else {
-        printf("Code message from server: %d\n", codemsg);
+        printf("CLI12: Code message received from server: '%d'\n", codemsg);
     }
 
     close(cli_fd);
