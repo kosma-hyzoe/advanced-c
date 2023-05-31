@@ -22,12 +22,20 @@ bool compare_strings(unsigned char *a, unsigned char *b, const size_t size)
  * uint64_t *p2 = (uint64_t *)str2;
  * bool equal = *p1 == *p2 ? true : false;
  */
-bool cmp_strings_no_loops(unsigned char *a, unsigned char *b, const size_t size)
+bool strcmp_looples(unsigned char *a, unsigned char *b, const size_t size)
 {
-    if (memcmp(a, b, size) == 0)
-        return true;
-    else
+    static int i = 0;
+
+    if (*a != *b) {
+        i = 0;
         return false;
+    } else if (i == size - 1) {
+        i = 0;
+        return true;
+    } else {
+        i++;
+        cmp_strings_no_loops(a++, b++, size);
+    }
 }
 
 int main()
