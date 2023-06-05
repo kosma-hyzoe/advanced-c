@@ -1,11 +1,13 @@
+#include <stdio.h>
+
 void increment(int *intptr, int x)
 {
-    *intptr += x;    
+    *intptr += x;
 }
 
-void multiply(int *intptr, int x)
+void multiply(int **intptr, int x)
 {
-    *intptr *= x;
+    **intptr *= x;
 }
 
 int main()
@@ -18,6 +20,7 @@ int main()
     printf("i after adding %i: %i\n", x, i);
 
     x = 10;
-    multiply(&i, x);
+    int *ip = &i;
+    multiply(&ip, x);
     printf("i after multiplying by %i: %i\n", x, i);
 }
