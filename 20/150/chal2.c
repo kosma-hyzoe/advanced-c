@@ -2,11 +2,13 @@
 #include <sys/types.h>
 #include <unistd.h>
 
+#define NCHILDREN 3
+
 int main()
 {
     printf("Parent process  : PID %d\tPPID %d\n", getpid(), getppid());
 
-    for (int i = 1; i < 4; i++) {
+    for (int i = 1; i <= NCHILDREN; i++) {
         pid_t pid = fork();
         if (pid > 0)
             break;

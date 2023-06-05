@@ -7,17 +7,11 @@ int sum(int n)
     if (n == 1)
        return 1;
     else
-        s = n + sum(--n); 
+        s = n + sum(n - 1);
 
     return s;
 }
 
-int findgcd(int n1, int n2)
-{
-    while (n1 != n2) 
-        return n1 > n2 ? findgcd(n1-n2, n2) : findgcd(n1, n2-n1); 
-    return n1;
-}
 
 int main()
 {

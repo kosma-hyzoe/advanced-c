@@ -1,9 +1,11 @@
-revstr(char *s)
+#include <stdio.h>
+
+char * revstr(char *s)
 {
     static int i = 0;
     static char revs[100];
 
-    if (*str) {
+    if (*s) {
         revstr(s + 1);
         revs[i++] = *s;
     }
@@ -13,5 +15,6 @@ revstr(char *s)
 
 int main()
 {
-
+    char foobar[] = "foobar";
+    printf("%s\n", revstr(foobar));
 }
