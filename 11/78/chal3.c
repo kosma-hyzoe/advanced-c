@@ -3,7 +3,7 @@ revstr(char *s)
     static int i = 0;
     static char revs[100];
 
-    if (*str) {
+    if (*s) {
         revstr(s + 1);
         revs[i++] = *s;
     }
