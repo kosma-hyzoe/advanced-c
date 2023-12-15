@@ -1,0 +1,12 @@
+Data Types Challenges:
+01. Write a program that uses two nested for loops and the modulus operator (%) to detect and print all prime numbers from range 1 to 100.
+02. Modify program to use switch statements instead of if statements.
+03. Create two functions, one that modify given integer by adding to it given number and second one that modify given integer by multiplying it by given number. Each of these functions should modify the outside integer in its own unique way. In main( ), create and initialize integer, print it, then pass it to each of the two functions, printing the results.
+04. Implement function func() that each time when is called prints number which is bigger by 2 than previous printed number from call of that function. In first call of that function 1 should be printed.
+05. Modify program to use the ternary if-else operator (? : )
+06. Create a struct that holds two strings (for defined maximum size) and one int. Create an instance of the struct, initialize all three values in your instance, and print them out. Take the address of your instance and assign it to a pointer to your struct type. Change the three values in your instance (strings can be change to empty string for simplicity) and print them out, all using the pointer.
+07. Create a program that print out all of the colors defined by enum. Use a loop. You could also use preprocessor #define for stringification macro to print colors as enumeration name.
+08. Create a program that defines two int arrays of same size. Create an array printing function which takes array, its size, name of array. Print out these 2 arrays. Modify value of last element of each arrays to be equal as sum of all elements of corresponding arrays. Print out these 2 arrays.
+09. Define a function that takes a double argument and returns an int. Create and initialize a pointer to this function, and call the function through your pointer.
+10. Create int array of some size. Then create function that takes int array and its size and print all array elements' addresses. Then do the same with char type. Then create function pointer functions to these two printing function and call them.
+11. Create int array of some size. Then create function that takes int array and its size and print all array elements and its' addresses. Write a function that takes an array as void*, an index of array, and a integer value as arguments. The function should modify specified element of array by specified int value. Print array after modification too.

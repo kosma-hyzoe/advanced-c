@@ -1,0 +1,37 @@
+PROJECT(logExtC)
+CMAKE_MINIMUM_REQUIRED(VERSION 3.0)
+
+if(NOT 
+   (PLATFORM STREQUAL "WINDOWS" OR
+    PLATFORM STREQUAL "LINUX" OR
+    PLATFORM STREQUAL "SOC")
+   )
+message( FATAL_ERROR "WRONG BUILD CONFIGURATION -> CMake will exit." )
+endif()
+
+message("   --------------------------------------------------")
+message("   build configuration:      ${PLATFORM}" )
+message("")
+message("   CMAKE_C_COMPILER:         ${CMAKE_C_COMPILER}" )
+message("   CMAKE_C_COMPILER_ID:      ${CMAKE_C_COMPILER_ID}")
+message("   CMAKE_C_COMPILER_VERSION: ${CMAKE_C_COMPILER_VERSION}")
+message("")
+message("   PROJECT_BINARY_DIR:       ${PROJECT_BINARY_DIR}")
+message("   PROJECT_SOURCE_DIR:       ${PROJECT_SOURCE_DIR}")
+message("   CMAKE_BINARY_DIR:         ${CMAKE_BINARY_DIR}")
+message("   CMAKE_SOURCE_DIR:         ${CMAKE_SOURCE_DIR}")
+message("   --------------------------------------------------")
+
+#SET(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${PROJECT_SOURCE_DIR}/bin)
+
+ADD_SUBDIRECTORY(ex01)
+ADD_SUBDIRECTORY(ex02)
+ADD_SUBDIRECTORY(ex03)
+ADD_SUBDIRECTORY(ex04)
+ADD_SUBDIRECTORY(ex05)
+ADD_SUBDIRECTORY(ex06)
+ADD_SUBDIRECTORY(ex07)
+ADD_SUBDIRECTORY(ex08)
+ADD_SUBDIRECTORY(ex09)
+ADD_SUBDIRECTORY(ex10)
+ADD_SUBDIRECTORY(ex11)
